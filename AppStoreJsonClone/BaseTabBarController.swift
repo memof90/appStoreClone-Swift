@@ -11,6 +11,20 @@ class BaseTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        let redViewController = UIViewController()
+        redViewController.view.backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+        redViewController.tabBarItem.title = "Red"
+        
+        
+        
+        let blueViewController = UIViewController()
+        blueViewController.view.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        blueViewController.tabBarItem.title = "Blue"
+        
+        
+        viewControllers = [
+            redViewController,
+            blueViewController,
+        ]
     }
 }
