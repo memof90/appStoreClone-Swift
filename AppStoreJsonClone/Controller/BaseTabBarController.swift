@@ -18,27 +18,27 @@ class BaseTabBarController: UITabBarController {
         
         
 //        MARK: FIRST CONTROLLER
-        let todayController = UIViewController()
-        todayController.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        todayController.navigationItem.title = "Today"
-        
-        
-        let todayNavController = UINavigationController(rootViewController: todayController)
-        todayNavController.tabBarItem.title = "Today"
-        todayNavController.tabBarItem.image = #imageLiteral(resourceName: "today_icon")
-        todayNavController.navigationBar.prefersLargeTitles = true
+//        let todayController = UIViewController()
+//        todayController.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        todayController.navigationItem.title = "Today"
+//        
+//        
+//        let todayNavController = UINavigationController(rootViewController: todayController)
+//        todayNavController.tabBarItem.title = "Today"
+//        todayNavController.tabBarItem.image = #imageLiteral(resourceName: "today_icon")
+//        todayNavController.navigationBar.prefersLargeTitles = true
         
 //        MARK: SECOND CONTROLLER
         
-        let redViewController = UIViewController()
-        redViewController.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        redViewController.navigationItem.title = "Apps"
-        
-        
-        let redNavController = UINavigationController(rootViewController: redViewController)
-        redNavController.tabBarItem.title = "Apps"
-        redNavController.tabBarItem.image = #imageLiteral(resourceName: "apps")
-        redNavController.navigationBar.prefersLargeTitles = true
+//        let redViewController = UIViewController()
+//        redViewController.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        redViewController.navigationItem.title = "Apps"
+//
+//
+//        let redNavController = UINavigationController(rootViewController: redViewController)
+//        redNavController.tabBarItem.title = "Apps"
+//        redNavController.tabBarItem.image = #imageLiteral(resourceName: "apps")
+//        redNavController.navigationBar.prefersLargeTitles = true
         
 //        MARK: TREE CONTROLLER
         
@@ -59,9 +59,9 @@ class BaseTabBarController: UITabBarController {
        
          
         viewControllers = [
-            todayNavController,
-            redNavController,
-            createNavController(viewController: UIViewController(), title: "Search", imageName: "search", tilteLarge: true)
+            createNavController(viewController: UIViewController(), title: "Today", imageName: "today_icon", tilteLarge: true),
+            createNavController(viewController: UIViewController(), title: "Apps", imageName: "apps", tilteLarge: true),
+            createNavController(viewController: AppsSearchController(), title: "Search", imageName: "search", tilteLarge: true)
         ]
     }
     
