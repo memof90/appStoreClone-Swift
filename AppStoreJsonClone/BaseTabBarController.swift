@@ -42,14 +42,14 @@ class BaseTabBarController: UITabBarController {
         
 //        MARK: TREE CONTROLLER
         
-        let blueViewController = UIViewController()
-        blueViewController.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        blueViewController.navigationItem.title = "Search"
-        
-        let blueNavController = UINavigationController(rootViewController: blueViewController)
-        blueNavController.tabBarItem.title = "Search"
-        blueNavController.navigationBar.prefersLargeTitles = true
-        blueNavController.tabBarItem.image = UIImage(named: "search")
+//        let blueViewController = UIViewController()
+//        blueViewController.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+//        blueViewController.navigationItem.title = "Search"
+//
+//        let blueNavController = UINavigationController(rootViewController: blueViewController)
+//        blueNavController.tabBarItem.title = "Search"
+//        blueNavController.navigationBar.prefersLargeTitles = true
+//        blueNavController.tabBarItem.image = UIImage(named: "search")
         
 //        MARK: CHANGE COLOR TABBAR
 //        tabBar.barTintColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
@@ -61,7 +61,20 @@ class BaseTabBarController: UITabBarController {
         viewControllers = [
             todayNavController,
             redNavController,
-            blueNavController,
+            createNavController(viewController: UIViewController(), title: "Search", imageName: "search", tilteLarge: true)
         ]
+    }
+    
+//    Fuctions to create NavControllers
+    fileprivate func createNavController(viewController: UIViewController, title: String, imageName: String, tilteLarge: Bool) -> UIViewController {
+        let navController = UINavigationController(rootViewController: viewController)
+        navController.navigationBar.prefersLargeTitles = tilteLarge
+        viewController.navigationItem.title = title
+        viewController.view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        navController.tabBarItem.title = title
+        navController.tabBarItem.image = UIImage(named: imageName)
+        
+        
+        return navController
     }
 }
