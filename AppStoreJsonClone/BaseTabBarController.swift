@@ -8,8 +8,27 @@
 import UIKit
 
 class BaseTabBarController: UITabBarController {
+    
+
+//    2-refactor out repeated logic of viewDidLoad
+//    3-maybe introduce our AppSearchController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+//        MARK: FIRST CONTROLLER
+        let todayController = UIViewController()
+        todayController.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        todayController.navigationItem.title = "Today"
+        
+        
+        let todayNavController = UINavigationController(rootViewController: todayController)
+        todayNavController.tabBarItem.title = "Today"
+        todayNavController.tabBarItem.image = #imageLiteral(resourceName: "today_icon")
+        todayNavController.navigationBar.prefersLargeTitles = true
+        
+//        MARK: SECOND CONTROLLER
         
         let redViewController = UIViewController()
         redViewController.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -18,8 +37,10 @@ class BaseTabBarController: UITabBarController {
         
         let redNavController = UINavigationController(rootViewController: redViewController)
         redNavController.tabBarItem.title = "Apps"
-        redNavController.navigationBar.prefersLargeTitles = true
         redNavController.tabBarItem.image = #imageLiteral(resourceName: "apps")
+        redNavController.navigationBar.prefersLargeTitles = true
+        
+//        MARK: TREE CONTROLLER
         
         let blueViewController = UIViewController()
         blueViewController.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -38,6 +59,7 @@ class BaseTabBarController: UITabBarController {
        
          
         viewControllers = [
+            todayNavController,
             redNavController,
             blueNavController,
         ]
