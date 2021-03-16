@@ -71,11 +71,14 @@ class SearchResultCell: UICollectionViewCell {
 //        backgroundColor = #colorLiteral(red: 0, green: 0.9810667634, blue: 0.5736914277, alpha: 1)
         
 //     MARK:Stack View contentLabel
-        let labelStackView = UIStackView(arrangedSubviews: [
+//        let labelStackView = UIStackView(arrangedSubviews: [
+//            nameLabel, categoryLabel, ratingLabel
+//        ])
+//        labelStackView.axis = .vertical
+    
+       let labelStackView  = VerticalStackView(arrangedSubviews: [
             nameLabel, categoryLabel, ratingLabel
         ])
-        labelStackView.axis = .vertical
-    
         
 //       MARK:Stack View Main
         let infoTopStackView = UIStackView(arrangedSubviews: [
@@ -92,11 +95,15 @@ class SearchResultCell: UICollectionViewCell {
         screenshotStackView.distribution = .fillEqually
         
 //        MARK:OverallStackView
-        let overallStackView = UIStackView(arrangedSubviews: [
-             infoTopStackView, screenshotStackView
-        ])
-        overallStackView.axis = .vertical
-        overallStackView.spacing = 16
+//        let overallStackView = UIStackView(arrangedSubviews: [
+//             infoTopStackView, screenshotStackView
+//        ])
+//        overallStackView.axis = .vertical
+//        overallStackView.spacing = 16
+        
+        let overallStackView = VerticalStackView(arrangedSubviews: [
+            infoTopStackView, screenshotStackView
+        ], spacing: 16)
         
         
         addSubview(overallStackView)

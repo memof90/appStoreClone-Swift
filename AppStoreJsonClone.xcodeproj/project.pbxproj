@@ -16,6 +16,7 @@
 		8D3ACFC925FFBA31005149F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D3ACFC725FFBA31005149F4 /* LaunchScreen.storyboard */; };
 		8D3ACFD225FFBAD7005149F4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3ACFD125FFBAD7005149F4 /* BaseTabBarController.swift */; };
 		8D42F3872601291A007D046E /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42F3862601291A007D046E /* UIView+Layout.swift */; };
+		8D42F38B2601500A007D046E /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D42F38A2601500A007D046E /* VerticalStackView.swift */; };
 		8DB13BF125FFDC6200DE22D3 /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB13BF025FFDC6200DE22D3 /* AppsSearchController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		8D3ACFCA25FFBA31005149F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D3ACFD125FFBAD7005149F4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		8D42F3862601291A007D046E /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		8D42F38A2601500A007D046E /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		8DB13BF025FFDC6200DE22D3 /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				8D42F3862601291A007D046E /* UIView+Layout.swift */,
+				8D42F38A2601500A007D046E /* VerticalStackView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				8D3ACFBD25FFBA2F005149F4 /* AppDelegate.swift in Sources */,
 				8DB13BF125FFDC6200DE22D3 /* AppsSearchController.swift in Sources */,
 				8D2B11002601109D00513DE3 /* SearchResultCell.swift in Sources */,
+				8D42F38B2601500A007D046E /* VerticalStackView.swift in Sources */,
 				8D42F3872601291A007D046E /* UIView+Layout.swift in Sources */,
 				8D3ACFBF25FFBA2F005149F4 /* SceneDelegate.swift in Sources */,
 			);
