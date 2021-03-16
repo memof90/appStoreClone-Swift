@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D2B11002601109D00513DE3 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2B10FF2601109D00513DE3 /* SearchResultCell.swift */; };
 		8D3ACFBD25FFBA2F005149F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3ACFBC25FFBA2F005149F4 /* AppDelegate.swift */; };
 		8D3ACFBF25FFBA2F005149F4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3ACFBE25FFBA2F005149F4 /* SceneDelegate.swift */; };
 		8D3ACFC125FFBA2F005149F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3ACFC025FFBA2F005149F4 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D2B10FF2601109D00513DE3 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		8D3ACFB925FFBA2F005149F4 /* AppStoreJsonClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStoreJsonClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D3ACFBC25FFBA2F005149F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D3ACFBE25FFBA2F005149F4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D2B10FE2601105200513DE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D2B10FF2601109D00513DE3 /* SearchResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8D3ACFB025FFBA2F005149F4 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		8D3ACFBB25FFBA2F005149F4 /* AppStoreJsonClone */ = {
 			isa = PBXGroup;
 			children = (
+				8D2B10FE2601105200513DE3 /* Views */,
 				8DB13BEF25FFDBAE00DE22D3 /* Controller */,
 				8D3ACFBC25FFBA2F005149F4 /* AppDelegate.swift */,
 				8D3ACFBE25FFBA2F005149F4 /* SceneDelegate.swift */,
@@ -155,6 +166,7 @@
 				8D3ACFC125FFBA2F005149F4 /* ViewController.swift in Sources */,
 				8D3ACFBD25FFBA2F005149F4 /* AppDelegate.swift in Sources */,
 				8DB13BF125FFDC6200DE22D3 /* AppsSearchController.swift in Sources */,
+				8D2B11002601109D00513DE3 /* SearchResultCell.swift in Sources */,
 				8D3ACFBF25FFBA2F005149F4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
