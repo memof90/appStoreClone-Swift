@@ -54,27 +54,55 @@ class SearchResultCell: UICollectionViewCell {
         return button
     }()
     
+//    Fuction to create imageView
+    lazy var screenhot1ImageView = self.createScreenShotImageView()
+    lazy var screenhot2ImageView = self.createScreenShotImageView()
+    lazy var screenhot3ImageView = self.createScreenShotImageView()
+    
+    func createScreenShotImageView() -> UIImageView {
+        let imageView = UIImageView()
+        imageView.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        return imageView
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = #colorLiteral(red: 0, green: 0.9810667634, blue: 0.5736914277, alpha: 1)
+//        backgroundColor = #colorLiteral(red: 0, green: 0.9810667634, blue: 0.5736914277, alpha: 1)
         
-//        Stack View contentLabel
+//     MARK:Stack View contentLabel
         let labelStackView = UIStackView(arrangedSubviews: [
             nameLabel, categoryLabel, ratingLabel
         ])
         labelStackView.axis = .vertical
-//        Stack View Main
-        let stackView = UIStackView(arrangedSubviews: [
+    
+        
+//       MARK:Stack View Main
+        let infoTopStackView = UIStackView(arrangedSubviews: [
             appIconImageView, labelStackView, getButton
         ])
-        stackView.spacing = 12
-        stackView.alignment = .center
+        infoTopStackView.spacing = 12
+        infoTopStackView.alignment = .center
         
-        addSubview(stackView)
+//        MARK:screenshotStackView
+        let screenshotStackView = UIStackView(arrangedSubviews: [
+            screenhot1ImageView,screenhot2ImageView,screenhot3ImageView
+        ])
+        screenshotStackView.spacing  = 12
+        screenshotStackView.distribution = .fillEqually
+        
+//        MARK:OverallStackView
+        let overallStackView = UIStackView(arrangedSubviews: [
+             infoTopStackView, screenshotStackView
+        ])
+        overallStackView.axis = .vertical
+        overallStackView.spacing = 16
+        
+        
+        addSubview(overallStackView)
         
 //        Contraints with Helpers
-        stackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
+        overallStackView.fillSuperview(padding: .init(top: 16, left: 16, bottom: 16, right: 16))
 //        contrainst
 //        stackView.translatesAutoresizingMaskIntoConstraints = false
 //        stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
