@@ -23,16 +23,7 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         fetchItunesApps()
     }
     
-//    Create struct but pass to other docuemnts
-    struct SearchResult: Decodable {
-        let resultCount: Int
-        let results: [Result]
-    }
-    
-    struct Result: Decodable {
-        let trackName: String
-        let primaryGenreName: String
-    }
+
     
     fileprivate func fetchItunesApps(){
         let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
@@ -76,7 +67,7 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
-        cell.nameLabel.text = ""
+        cell.nameLabel.text = "Here is My App"
         return cell
     }
     
