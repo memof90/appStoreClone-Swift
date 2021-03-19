@@ -23,7 +23,10 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
         fetchItunesApps()
     }
     
-
+    fileprivate var appResults = [Result]()
+    
+//    1 - populate our cell with our itunes api data
+//    2 - Extract this fuctionItunes Appd OutSide of this controller File
     
     fileprivate func fetchItunesApps(){
         let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
@@ -45,7 +48,14 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
             do {
                 let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
 //                print(searchResult)
-                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
+//                searchResult.results.forEach({print($0.trackName, $0.primaryGenreName)})
+                self.appResults = searchResult.results
+                
+//                reload data
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
             } catch let jsonErr {
                 debugPrint("Failed to decode json:", jsonErr)
             }
@@ -61,13 +71,21 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+//        return 5
+        return appResults.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
-        cell.nameLabel.text = "Here is My App"
+//        data to saw into app
+//        cell.nameLabel.text = "Here is My App"
+//        let appResult = appResults[indexPath.row]
+        let appResult = appResults[indexPath.item]
+        cell.nameLabel.text = appResult.trackName
+        cell.categoryLabel.text = appResult.primaryGenreName
+        cell.ratingLabel.text = "\(appResult.averageUserRating)"
+        
         return cell
     }
     
