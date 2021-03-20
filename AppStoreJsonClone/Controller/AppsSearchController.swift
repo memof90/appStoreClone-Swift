@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -93,13 +94,29 @@ class AppsSearchController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchResultCell
+        cell.appResult = appResults[indexPath.item]
 //        data to saw into app
 //        cell.nameLabel.text = "Here is My App"
 //        let appResult = appResults[indexPath.row]
-        let appResult = appResults[indexPath.item]
-        cell.nameLabel.text = appResult.trackName
-        cell.categoryLabel.text = appResult.primaryGenreName
-        cell.ratingLabel.text = "\(appResult.averageUserRating)"
+//        let appResult = appResults[indexPath.item]
+//        cell.nameLabel.text = appResult.trackName
+//        cell.categoryLabel.text = appResult.primaryGenreName
+//        cell.ratingLabel.text = "\(appResult.averageUserRating)"
+//        
+////        icon and screen shots
+//        let url = URL(string: appResult.artworkUrl100)
+//        cell.appIconImageView.sd_setImage(with: url)
+////        screen shots
+////        cell.screenhot1ImageView
+//        cell.screenhot1ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[0]))
+//        if appResult.screenshotUrls.count > 1 {
+//            cell.screenhot2ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[1]))
+//        }
+//        if appResult.screenshotUrls.count > 2 {
+//            cell.screenhot3ImageView.sd_setImage(with: URL(string: appResult.screenshotUrls[2]))
+//        }
+//        cell.appResult = appResults[indexPath.item]
+//        cell.appResult = appResult
         
         return cell
     }
