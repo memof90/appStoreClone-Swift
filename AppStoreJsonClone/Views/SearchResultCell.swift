@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchResultCell: UICollectionViewCell {
-    
+//    MARK: pass Data label, subtitle, rating, icon, screenshots
     var appResult: Result! {
         didSet {
             nameLabel.text = appResult.trackName
