@@ -11,9 +11,9 @@ import Foundation
 class Service {
     static let shared = Service() //singleton object
     
-    func fetchApps(completion: @escaping ([Result], Error?) -> ()) {
+    func fetchApps(searchTerm: String, completion: @escaping ([Result], Error?) -> ()) {
         print("Fetching itunes from Service Layer")
-                let urlString = "https://itunes.apple.com/search?term=instagram&entity=software"
+                let urlString = "https://itunes.apple.com/search?term=\(searchTerm)&entity=software"
         
                 guard let url = URL(string: urlString) else { return }
         //        fetch data to internet

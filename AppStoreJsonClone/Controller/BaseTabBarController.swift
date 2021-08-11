@@ -60,8 +60,8 @@ class BaseTabBarController: UITabBarController {
          
         viewControllers = [
             createNavController(viewController: AppsSearchController(), title: "Search", imageName: "search", tilteLarge: true),
+            createNavController(viewController: AppsController( ), title: "Apps", imageName: "apps", tilteLarge: true),
             createNavController(viewController: UIViewController(), title: "Today", imageName: "today_icon", tilteLarge: true),
-            createNavController(viewController: UIViewController(), title: "Apps", imageName: "apps", tilteLarge: true)
 //            First solution
 //            createNavController(viewController: AppsSearchController(collectionViewLayout: UICollectionViewFlowLayout()), title: "Search", imageName: "search", tilteLarge: true)
 //            second solution
